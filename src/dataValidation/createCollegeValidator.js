@@ -12,11 +12,9 @@ const isValidName = function (name) {
     try {
 
         //------------------------------------> (name must be present.) <----------------------------//
-
         if (!name) {
             return "college name is required."
         }
-
         //------------------------> (If name must be string) <--------------------------------------//
 
         if (typeof name !== 'string') {

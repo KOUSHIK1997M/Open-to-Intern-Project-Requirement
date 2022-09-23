@@ -7,6 +7,7 @@ const isValid = require("../dataValidation/createCollegeValidator")
 //========================================>  (( Create College api call )) <=================================================//
 
 const createCollege = async (req, res)=> {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let data = req.body
 
@@ -27,10 +28,8 @@ const createCollege = async (req, res)=> {
 
          //------------------------> (Name data validation) <------------------------------//
 
-        let msgName = isValid.isValidName(name)
-        if (msgName) {
-            return res.status(400).send({ status: false, message: msgName })
-        }
+        
+         
 
          //------------------------> (Full name validation) <------------------------------//
 
@@ -69,6 +68,7 @@ const createCollege = async (req, res)=> {
 
 
 const getCollege = async function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let collegeName = req.query.collegeName
 
